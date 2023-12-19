@@ -7,7 +7,6 @@
     <td>
         <span>{{ $employee['type'] }}</span>
     </td>
-    <!-- Add more cells with data as needed -->
     <td>
         <a href="/employees/{{ $employee['id'] }}"><i class="fas fa-fw fa-eye"></i></a>
         <a href=""><i class="fas fa-fw fa-pencil-alt"></i></a>
