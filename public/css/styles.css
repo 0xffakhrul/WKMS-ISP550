@@ -1,0 +1,86 @@
+/* custom.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap");
+
+body {
+    font-family: "Inter" !important;
+}
+
+.main-sidebar {
+    background-color: white !important;
+}
+
+nav,
+.nav-item,
+.nav-link {
+    color: black !important;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.nav-sidebar .nav-item > .nav-link {
+    margin-bottom: 0.5rem;
+}
+
+.active {
+    box-shadow: none !important;
+    background-color: #449a7c !important;
+    color: white !important;
+}
+
+i {
+    padding-right: 25px;
+}
+
+.elevation-4 {
+    box-shadow: none !important;
+}
+
+[class*="sidebar-dark"] .brand-link {
+    border-bottom: none;
+}
+
+[class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link {
+    background-color: rgba(0, 0, 0, 0.062);
+}
+
+.brand-image {
+    display: none;
+}
+
+/* nav {
+    background-color: #f5f7f9 !important;
+} */
+
+.navbar-white {
+    background-color: #f5f7f9 !important;
+}
+
+.fw-bold {
+    font-weight: 700;
+    font-size: 1.875rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.7rem;
+}
+
+.nav-header {
+    color: rgb(148, 148, 148) !important;
+    margin-bottom: 0.5rem;
+}
+
+p,
+a,
+span {
+    font-size: 0.9rem;
+}
+
+.breadcrumb {
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    background: transparent;
+    opacity: 0.5;
+}
+
+.btn {
+    font-size: 0.875rem;
+    font-weight: 700;
+}
