@@ -84,3 +84,14 @@ span {
     font-size: 0.875rem;
     font-weight: 700;
 }
+
+tr,
+td,
+th {
+    font-size: 0.875rem;
+}
+
+.small-box,
+.card {
+    border-radius: 0.5rem;
+}
