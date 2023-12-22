@@ -25,4 +25,17 @@ Route::get('/employees', [EmployeeController::class, 'index']);
 
 Route::get('/employees/create', [EmployeeController::class, 'create']);
 
+//store
+Route::post('/employees', [EmployeeController::class, 'store']);
+
+//edit form
+Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit']);
+
+//update
+Route::put('/employees/{employee}', [EmployeeController::class, 'update']);
+
+
+
+
+//biar
 Route::get('/employees/{employee}', [EmployeeController::class, 'show']);
