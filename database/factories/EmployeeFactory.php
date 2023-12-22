@@ -17,8 +17,11 @@ class EmployeeFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name,
-            'type' => 'Part-Time, Full-Time',
+            'name' => $this->faker->name,
+            'phone_number' => $this->faker->phoneNumber,
+            'email' => $this->faker->unique()->safeEmail,
+            'hire_date' => $this->faker->date,
+            'type' => $this->faker->randomElement(['part_time', 'full_time']),
         ];
     }
 }
