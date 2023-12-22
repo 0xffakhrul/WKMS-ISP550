@@ -87,11 +87,17 @@ span {
 
 tr,
 td,
-th {
+th,
+.form-group > label,
+.form-group > input,
+.input-group > input,
+option,
+.form-control {
     font-size: 0.875rem;
 }
 
 .small-box,
-.card {
+.card,
+.btn {
     border-radius: 0.5rem;
 }
