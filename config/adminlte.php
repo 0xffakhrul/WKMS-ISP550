@@ -308,6 +308,7 @@ return [
             'text' => 'employees',
             'url'  => 'employees',
             'icon' => 'fas fa-fw fa-users',
+            // 'active' => request()->is('employees*'),
         ],
         [
             'text' => 'leave',
@@ -375,6 +376,27 @@ return [
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],
+        ],
+        'DateRangePicker' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '//cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js'
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '//cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css'
+                ],
+
+            ]
         ],
         'Select2' => [
             'active' => false,
