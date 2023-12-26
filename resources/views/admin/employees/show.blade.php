@@ -5,14 +5,24 @@
 @endpush
 
 @section('content')
-    <div class="container-fluid pt-3">
+    <section class="container-fluid pt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/employees') }}">Employees List</a></li>
-                <li class="breadcrumb-item" aria-current="page">Create</li>
+                <li class="breadcrumb-item" aria-current="page">{{ $employee['name'] }}</li>
             </ol>
         </nav>
-        <h1 class="fw-bold">New Employee</h1>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="fw-bold pt-1">View {{ $employee['name'] }}</h2>
+            <div class="d-flex">
+                <a href="/employees/{{ $employee->id }}/edit" class="btn btn-success mr-1">Edit</a>
+                <form method="POST" action="/employees/{{ $employee->id }}">
+                    @csrf
+                    @method('DELETE')
+                    <button href="/employees/{{ $employee->id }}/edit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
 
         <form method="POST" action="/employees">
             @csrf
@@ -21,15 +31,15 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <x-adminlte-input name="name" type="text" placeholder="Enter Name" label="Name"
-                                value="{{ old('name') }}" />
+                                value="{{ $employee->name }}" disabled />
                         </div>
                         <div class="col-sm-6">
                             <x-adminlte-input name="phone_number" type="tel" placeholder="Enter Phone No."
-                                label="Phone Number" value="{{ old('phone_number') }}" />
+                                label="Phone Number" value="{{ $employee->phone_number }}" disabled />
                         </div>
                         <div class="col-sm-6">
                             <x-adminlte-input name="email" type="email" placeholder="Enter Email" label="Email"
-                                value="{{ old('email') }}" />
+                                value="{{ $employee->email }}" disabled />
                         </div>
                         <div class="col-sm-6">
                             @php
@@ -40,8 +50,9 @@
                                     'locale' => ['format' => 'YYYY-MM-DD'], // Set the format to display
                                 ];
                             @endphp
-                            <x-adminlte-date-range name="hire_date" label="Date" igroup-size="md" :config="$config">
-                                <x-slot name="appendSlot" value="{{ old('hire_date') }}">
+                            <x-adminlte-date-range name="hire_date" label="Date" igroup-size="md" :config="$config"
+                                value="{{ $employee->hire_date }}" disabled>
+                                <x-slot name="appendSlot">
                                     <div class="input-group-text bg-dark justify-content-center">
                                         <i class="fas fa-calendar-day"></i>
                                     </div>
@@ -49,17 +60,12 @@
                             </x-adminlte-date-range>
                         </div>
                         <div class="col-sm-6">
-                            <x-adminlte-select name="type" label="Employment Type">
-                                <option value="part_time" {{ old('type') == 'part_time' ? 'selected' : '' }}>
-                                    Part-Time</option>
-                                <option value="full_time" {{ old('type') == 'full_time' ? 'selected' : '' }}>
-                                    Full-Time</option>
-                            </x-adminlte-select>
+                            <x-adminlte-input name="type" type="text" placeholder="Enter Employment Type"
+                                label="Employment Type" value="{{ $employee->type }}" disabled />
                         </div>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-    </div>
+    </section>
 @stop

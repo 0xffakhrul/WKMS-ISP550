@@ -312,7 +312,7 @@ return [
         ],
         [
             'text' => 'leave',
-            'url'  => 'admin/settings',
+            'url'  => 'leave-requests',
             'icon' => 'fas fa-fw fa-calendar',
         ],
         [

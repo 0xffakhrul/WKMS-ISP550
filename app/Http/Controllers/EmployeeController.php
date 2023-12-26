@@ -11,7 +11,7 @@ class EmployeeController extends Controller
     //show all listings
     public function index()
     {
-        return view('employees.index', [
+        return view('admin.employees.index', [
             'employees' => Employee::all()
         ]);
     }
@@ -19,7 +19,7 @@ class EmployeeController extends Controller
     //show single employee
     public function show(Employee $employee)
     {
-        return view('employees.show', [
+        return view('admin.employees.show', [
             'employee' => $employee
         ]);
     }
@@ -27,7 +27,7 @@ class EmployeeController extends Controller
     //create form
     public function create()
     {
-        return view('employees.create');
+        return view('admin.employees.create');
     }
 
     //store employee
@@ -49,7 +49,7 @@ class EmployeeController extends Controller
     //edit form
     public function edit(Employee $employee)
     {
-        return view('employees.edit', ['employee' => $employee]);
+        return view('admin.employees.edit', ['employee' => $employee]);
     }
 
     //update employee
@@ -66,5 +66,19 @@ class EmployeeController extends Controller
         $employee->update($formFields);
 
         return redirect('/employees/' . $employee->id)->with('message', 'Employee updated successfully!');
+    }
+
+    //delete employee
+    public function destroy(Employee $employee)
+    {
+        $employee->delete();
+        return redirect('/')->with('message', 'Employee deleted successfully');
+    }
+
+    // Employee dashboard
+    public function dashboard()
+    {
+        // Implement your employee dashboard logic here
+        return view('employee.dashboard');
     }
 }

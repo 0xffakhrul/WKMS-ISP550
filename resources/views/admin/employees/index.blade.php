@@ -16,7 +16,7 @@
         foreach ($employees as $employee) {
             $type = $employee->type == 'full_time' ? 'Full-Time' : 'Part-Time';
             $btnDetails = '<a href="/employees/' . $employee->id . '"><i class="fas fa-fw fa-eye"></i></a>';
-            $btnEdit = '<a href=""><i class="fas fa-fw fa-pencil-alt text-warning"></i></a>';
+            $btnEdit = '<a href="/employees/' . $employee->id . '/edit"><i class="fas fa-fw fa-pencil-alt text-warning"></i></a>';
             $btnDelete = '<a href=""><i class="fas fa-fw fa-trash text-danger"></i></a>';
 
             $rowData = [$employee->id, $employee->name, $employee->email, $employee->phone_number, $type, '<nobr>' . $btnDetails . $btnEdit . $btnDelete . '</nobr>'];

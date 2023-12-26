@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Employee;
+use App\Models\LeaveRequest;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,7 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\User::factory(3)->create();
-        Employee::factory(3)->create();
+        // Employee::factory(3)->create();
+        LeaveRequest::factory(3)->create();
+        $this->call(RoleSeeder::class);
+        $this->call(AdminSeeder::class);
 
         // Employee::create(
         //     [
